@@ -7,18 +7,27 @@
 //
 
 import UIKit
+import HorizontalTextView
 
 class ViewController: UIViewController {
 
+    @IBOutlet private var textView: HorizontalTextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        let attrStr = NSAttributedString(
+            string: try! String(contentsOf: Bundle.main.url(forResource: "text", withExtension: "txt")!),
+            attributes: [
+                NSAttributedString.Key.foregroundColor: UIColor.red,
+                NSAttributedString.Key.font: UIFont.systemFont(ofSize: 30)
+            ]
+        )
+        
+        
+        textView.attributedString = attrStr
+        textView.isPagingEnabled = true
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
 }
 
