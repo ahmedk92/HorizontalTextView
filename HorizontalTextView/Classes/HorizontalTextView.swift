@@ -8,13 +8,23 @@
 
 import UIKit
 
+/// `HorizontalTextView` is a `UIView` subclass
+/// that layouts text horizontally.
+/// It encapsulates a `UIScrollView` instance that contains a
+/// collection of `UITextView` instances where each represents
+/// a page of text.
 open class HorizontalTextView: UIView {
+    
+    
+    /// The styled text displayed by the text view.
     open var attributedString = NSAttributedString(string: "") {
         didSet {
             textStorage = NSTextStorage(attributedString: attributedString)
             relayout()
         }
     }
+    
+    /// A Boolean value that determines whether paging is enabled for the scroll view.
     open var isPagingEnabled: Bool {
         set {
             scrollView.isPagingEnabled = newValue
