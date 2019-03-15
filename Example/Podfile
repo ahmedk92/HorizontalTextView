@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'HorizontalTextView_Example' do
+  pod 'HorizontalTextView', :path => '../'
+
+  target 'HorizontalTextView_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
