@@ -5,6 +5,10 @@
 [![License](https://img.shields.io/cocoapods/l/HorizontalTextView.svg?style=flat)](https://cocoapods.org/pods/HorizontalTextView)
 [![Platform](https://img.shields.io/cocoapods/p/HorizontalTextView.svg?style=flat)](https://cocoapods.org/pods/HorizontalTextView)
 
+## Demo
+
+![demo](htv3.gif)
+
 ## TODO
 
 - [ ] RTL
