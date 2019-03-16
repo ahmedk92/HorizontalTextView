@@ -15,6 +15,9 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Requirements
 
+- iOS 10+
+- Swift 4.2
+
 ## Installation
 
 HorizontalTextView is available through [CocoaPods](https://cocoapods.org). To install
