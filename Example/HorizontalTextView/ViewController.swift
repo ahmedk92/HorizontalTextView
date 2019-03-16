@@ -21,6 +21,7 @@ class ViewController: UIViewController {
             NSAttributedString.Key.font: font
         ]
     )
+    private var throttleTimer: Timer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,11 +35,18 @@ class ViewController: UIViewController {
 
 extension ViewController {
     @IBAction private func fontSizeSliderValueChanged(_ sender: UISlider) {
-        attrStr.setAttributes([
-            NSAttributedString.Key.font: font.withSize(CGFloat(sender.value))
-        ], range: NSMakeRange(0, attrStr.length))
-        
-        textView.attributedString = attrStr
+        throttleTimer?.invalidate()
+        throttleTimer = nil
+        throttleTimer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: false, block: { [weak self] (_) in
+            guard let self = self else {
+                return
+            }
+            self.attrStr.setAttributes([
+                NSAttributedString.Key.font: font.withSize(CGFloat(sender.value))
+                ], range: NSMakeRange(0, self.attrStr.length))
+            
+            self.textView.attributedString = self.attrStr
+        })
     }
 }
 

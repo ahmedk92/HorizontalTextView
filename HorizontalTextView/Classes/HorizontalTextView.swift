@@ -20,7 +20,6 @@ open class HorizontalTextView: UIView {
     open var attributedString = NSAttributedString(string: "") {
         didSet {
             textStorage = NSTextStorage(attributedString: attributedString)
-            invalidateLayout()
         }
     }
     
@@ -34,7 +33,11 @@ open class HorizontalTextView: UIView {
             return scrollView.isPagingEnabled
         }
     }
-    private var textStorage = NSTextStorage(string: "")
+    private var textStorage = NSTextStorage(string: "") {
+        didSet {
+            invalidateLayout()
+        }
+    }
     private lazy var layoutManager = NSLayoutManager()
     private var textContainers: [NSTextContainer] = []
     private var textViews: [UITextView] {
@@ -47,20 +50,9 @@ open class HorizontalTextView: UIView {
         return sv
     }()
     
-    open override var bounds: CGRect {
-        didSet {
-            relayout()
-        }
-    }
-    
-    open override var frame: CGRect {
-        didSet {
-            relayout()
-        }
-    }
-    
     open override func layoutSubviews() {
         scrollView.frame = bounds
+        relayout()
     }
 }
 
@@ -75,13 +67,14 @@ extension HorizontalTextView {
     
     private func invalidateLayout() {
         lastSize = .zero
-        relayout()
+        setNeedsLayout()
     }
     
     private func relayout() {
         guard lastSize != size else {
             return
         }
+
         defer {
             lastSize = size
         }
