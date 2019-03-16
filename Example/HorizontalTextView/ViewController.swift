@@ -20,7 +20,7 @@ class ViewController: UIViewController {
         let attrStr = NSAttributedString(
             string: try! String(contentsOf: Bundle.main.url(forResource: "text", withExtension: "txt")!),
             attributes: [
-                NSAttributedString.Key.foregroundColor: UIColor.red,
+                NSAttributedString.Key.foregroundColor: UIColor.darkText,
                 NSAttributedString.Key.font: UIFont.systemFont(ofSize: 30)
             ]
         )
