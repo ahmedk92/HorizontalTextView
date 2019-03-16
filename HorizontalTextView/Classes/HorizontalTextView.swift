@@ -20,7 +20,7 @@ open class HorizontalTextView: UIView {
     open var attributedString = NSAttributedString(string: "") {
         didSet {
             textStorage = NSTextStorage(attributedString: attributedString)
-            relayout()
+            invalidateLayout()
         }
     }
     
@@ -71,6 +71,11 @@ extension HorizontalTextView {
         // last line may be clipped. Subtracting a small value from the
         // height seem to hide it.
         return CGSize(width: bounds.size.width, height: bounds.size.height - 10)
+    }
+    
+    private func invalidateLayout() {
+        lastSize = .zero
+        relayout()
     }
     
     private func relayout() {
