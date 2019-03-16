@@ -66,6 +66,10 @@ open class HorizontalTextView: UIView {
 
 extension HorizontalTextView {
     private var size: CGSize {
+        // TODO: Fix work-around.
+        // Here I work around an issue. If I leave the height untouched,
+        // last line may be clipped. Subtracting a small value from the
+        // height seem to hide it.
         return CGSize(width: bounds.size.width, height: bounds.size.height - 10)
     }
     
