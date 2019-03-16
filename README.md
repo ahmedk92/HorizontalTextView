@@ -35,7 +35,7 @@ ahmedk92, ahmedkhalaf.92@gmail.com
 
 HorizontalTextView is available under the MIT license. See the LICENSE file for more info.
 
-## Idead
+## Idea
 
 This is a straightforward implementation of the idea described here in the [official docs](https://developer.apple.com/library/archive/documentation/StringsTextFonts/Conceptual/TextAndWebiPhoneOS/CustomTextProcessing/CustomTextProcessing.html#//apple_ref/doc/uid/TP40009542-CH4-SW67). 
 
