@@ -35,6 +35,12 @@ ahmedk92, ahmedkhalaf.92@gmail.com
 
 HorizontalTextView is available under the MIT license. See the LICENSE file for more info.
 
+## Idead
+
+This is a straightforward implementation of the idea described here in the [official docs](https://developer.apple.com/library/archive/documentation/StringsTextFonts/Conceptual/TextAndWebiPhoneOS/CustomTextProcessing/CustomTextProcessing.html#//apple_ref/doc/uid/TP40009542-CH4-SW67). 
+
+An `NSLayoutManager` gradually lays out text (`NSTextStorage`) in a series of `NSTextContainer` objects (each representing a page of text). A separate `UITextView` is created for each `NSTextContainer`, and they take care of actual rendering. Then a `UIScrollView` wraps the text views for scrolling/paging.
+
 ## Contribution
 
 Contributions are welcome in the form of issues, but pull requests are preferred. Please consider the following when submitting code:
