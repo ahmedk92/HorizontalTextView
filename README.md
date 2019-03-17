@@ -14,6 +14,7 @@
 - [ ] RTL
 - [ ] IB Integration
 - [ ] Selection
+- [ ] Asynchronous Rendering
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
