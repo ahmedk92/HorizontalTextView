@@ -15,6 +15,7 @@
 - [ ] IB Integration
 - [ ] Selection
 - [ ] Asynchronous Rendering
+- [ ] Custom Page Transitions (built-in and/or through delegation)
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
